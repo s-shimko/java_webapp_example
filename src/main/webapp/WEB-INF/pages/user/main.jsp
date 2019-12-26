@@ -16,7 +16,7 @@
 
 			
 			<span>
-				<a href="/library-simple/LibraryServlet?action=add_book">Add new book</a>
+				<a href="/LibraryServlet?action=add_book">Add new book</a>
 			</span>
 			
 			 <span> <c:forEach var="book" items="${book_list}">

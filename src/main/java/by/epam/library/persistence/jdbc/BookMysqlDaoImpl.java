@@ -15,7 +15,7 @@ import by.epam.library.persistence.BookDAO;
 public class BookMysqlDaoImpl extends BaseMySqlDao implements BookDAO {
 
 	private static final String SQL_SELECT_BOOKS = "select * from book";
-	private static final String SQL_INSERT_BOOK = "insert into book(title, author, price) VALUE (?,?,?)";
+	private static final String SQL_INSERT_BOOK = "insert into book(title, author, price) VALUES (?,?,?)";
 
 	@Override
 	public List<Book> readBooks() {
@@ -55,7 +55,7 @@ public class BookMysqlDaoImpl extends BaseMySqlDao implements BookDAO {
 		try {
 			conn = getDBConnection();
 
-			PreparedStatement ps = conn.prepareStatement(SQL_INSERT_BOOK, PreparedStatement.RETURN_GENERATED_KEYS);
+			PreparedStatement ps = conn.prepareStatement(SQL_INSERT_BOOK);
 			ps.setString(1, book.getTitle());
 			ps.setString(2, book.getAuthor());
 			ps.setDouble(3, book.getPrice());

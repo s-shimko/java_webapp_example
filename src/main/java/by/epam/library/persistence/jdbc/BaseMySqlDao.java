@@ -16,14 +16,15 @@ abstract class BaseMySqlDao {
 		String dbPass = rb.getString("db.pass");
 		String driver = rb.getString("db.driver.name");
 
-		try {
-			Class.forName(driver);
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			Class.forName(driver);
+//		} catch (ClassNotFoundException e) {
+//			e.printStackTrace();
+//		}
 
 		Connection conn = null;
-		conn = DriverManager.getConnection(url, dbUser, dbPass);
+//		conn = DriverManager.getConnection(url, dbUser, dbPass);
+		conn = DriverManager.getConnection(url);
 
 		return conn;
 	}
